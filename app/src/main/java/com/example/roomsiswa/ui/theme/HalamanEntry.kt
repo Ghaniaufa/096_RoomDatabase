@@ -104,7 +104,7 @@ fun EntrySiswaBody(
 fun FormInputSiswa(
     detailSiswa: DetailSiswa,
     modifier: Modifier = Modifier,
-    onValueChange: (DetailSiswa) -> Unit,
+    onValueChange: (DetailSiswa) -> Unit = {},
     enabled: Boolean = true
 ){
     Column(
@@ -120,16 +120,16 @@ fun FormInputSiswa(
             singleLine = true
         )
         OutlinedTextField(
-            value = detailSiswa.nama,
-            onValueChange = {onValueChange(detailSiswa.copy(nama = it)) },
+            value = detailSiswa.alamat,
+            onValueChange = {onValueChange(detailSiswa.copy(alamat = it)) },
             label = {Text(stringResource(id = R.string.alamat)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true
         )
         OutlinedTextField(
-            value = detailSiswa.nama,
-            onValueChange = {onValueChange(detailSiswa.copy(nama = it)) },
+            value = detailSiswa.telpon,
+            onValueChange = {onValueChange(detailSiswa.copy(telpon = it)) },
             label = {Text(stringResource(id = R.string.telpon)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
