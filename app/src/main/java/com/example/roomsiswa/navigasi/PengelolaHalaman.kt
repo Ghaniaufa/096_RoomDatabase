@@ -9,9 +9,11 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.roomsiswa.R
 import com.example.roomsiswa.ui.theme.DestinasiEntry
 import com.example.roomsiswa.ui.theme.DestinasiHome
@@ -19,7 +21,7 @@ import com.example.roomsiswa.ui.theme.EntrySiswaScreen
 import com.example.roomsiswa.ui.theme.HomeScreen
 
 @Composable
-fun SiswaApp(navController: NavHostController = rememeberNavController()){
+fun SiswaApp(navController: NavHostController = rememberNavController()){
     HostNavigasi(navController = navController)
 }
 
