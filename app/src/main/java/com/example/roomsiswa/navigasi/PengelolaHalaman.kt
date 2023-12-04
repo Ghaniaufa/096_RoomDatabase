@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -37,8 +38,10 @@ fun SiswaTopAppBar(
     navigateUp: () -> Unit = {}
 ){
     CenterAlignedTopAppBar(title = { Text(title)},
+
         modifier = modifier,
         scrollBehavior = scrollBehavior,
+
         navigationIcon = {
             if (canNavigateBack) {
                 IconButton(onClick = navigateUp) {
@@ -57,14 +60,19 @@ fun HostNavigasi(
     navController: NavHostController,
     modifier: Modifier = Modifier
 ){
-    NavHost(navController=navController, startDestination = DestinasiHome.route, modifier = Modifier)
+    NavHost(
+        navController=navController,
+        startDestination = DestinasiHome.route,
+        modifier = Modifier)
     {
         composable(DestinasiHome.route){
-            HomeScreen(navigateToItemEntry = {navController.navigate(DestinasiEntry.route)},
+            HomeScreen(
+                navigateToItemEntry = {
+                navController.navigate(DestinasiEntry.route)},
             )
         }
         composable(DestinasiEntry.route){
-            EntrySiswaScreen(navigateBack = {navController.popBackStack()})
+            EntrySiswaScreen(navigasiBack = {navController.popBackStack()})
         }
     }
 }
